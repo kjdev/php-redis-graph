@@ -60,6 +60,8 @@ $graph->commit();
 
 $query = 'MATCH (p:person)-[v:visited {purpose:"pleasure"}]->(c:country) RETURN p.name, p.age, v.purpose, c.name';
 
+$result = $graph->query($query);
+
 // Print resultset
 $result->prettyPrint();
 
