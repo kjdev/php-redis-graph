@@ -1,0 +1,22 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+services:
+  - docker
+
+before_script:
+  - export TEST_PHP_EXECUTABLE=`which php`
+  - curl http://getcomposer.org/installer | php
+  - php composer.phar install
+  - php composer.phar require predis/predis
+  - docker run -d -p 6379:6379 -it --rm --name redisgraph redislabs/redisgraph
+
+script:
+  - php ./tests/run.php | tee test-output.txt && grep 'TEST SUMMARY$' test-output.txt > /dev/null ; test $? '!=' 0
+
+after_failure:
+  - for FILE in `find ./tests -name '*.diff'`; do echo echo $FILE; cat $FILE; echo; done
