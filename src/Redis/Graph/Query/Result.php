@@ -99,7 +99,7 @@ class Result
 
   private function parseStats($response)
   {
-    if (!isset($response[1])) {
+    if (!isset($response[1]) || !is_array($response[1])) {
       return;
     }
 
