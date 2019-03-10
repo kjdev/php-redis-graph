@@ -48,6 +48,3 @@ array(2) {
   ["internal_execution_time"]=>
   float(%f)
 }
-+--------+
-| t.name |
-+--------+
