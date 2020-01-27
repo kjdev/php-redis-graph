@@ -10,7 +10,7 @@
     "predis/predis": "If you want to use predis."
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit tests"
   },
   "autoload": {
     "psr-4": { "Redis\\": "src/Redis/" }
