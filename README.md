@@ -3,7 +3,7 @@ RedisGraph PHP Client
 
 [![Build Status](https://travis-ci.org/kjdev/php-redis-graph.svg?branch=master)](https://travis-ci.org/kjdev/php-redis-graph)
 
-[RedisGraph](https://github.com/RedisLabsModules/redis-graph)
+[RedisGraph](https://github.com/RedisGraph/RedisGraph)
 
 Install
 -------
