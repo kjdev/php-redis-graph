@@ -9,6 +9,9 @@
     "ext-redis": "If you want to use redis extension.",
     "predis/predis": "If you want to use predis."
   },
+  "scripts": {
+    "test": "phpunit"
+  },
   "autoload": {
     "psr-4": { "Redis\\": "src/Redis/" }
   }
