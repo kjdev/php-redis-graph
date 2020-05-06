@@ -78,43 +78,123 @@ while ($row = $result->fetch()) {
 
 $graph->delete();
 --EXPECTF--
-+--------+--------+
-| a.name | b.name |
-+--------+--------+
-| src12  | dest12 |
-| src11  | dest11 |
-+--------+--------+
++-----------------------+-----------------------+
+| a                     | b                     |
++-----------------------+-----------------------+
+| Redis\Graph\Node@node | Redis\Graph\Node@node |
+| Redis\Graph\Node@node | Redis\Graph\Node@node |
++-----------------------+-----------------------+
 array(2) {
-  ["a.name"]=>
-  string(5) "src12"
-  ["b.name"]=>
-  string(6) "dest12"
+  ["a"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(5) "src11"
+    }
+  }
+  ["b"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(6) "dest11"
+    }
+  }
 }
 array(2) {
-  ["a.name"]=>
-  string(5) "src11"
-  ["b.name"]=>
-  string(6) "dest11"
+  ["a"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(5) "src12"
+    }
+  }
+  ["b"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(6) "dest12"
+    }
+  }
 }
-+--------+--------+
-| s.name | d.name |
-+--------+--------+
-| src11  | dest11 |
-+--------+--------+
++-----------------------+-----------------------+
+| s                     | d                     |
++-----------------------+-----------------------+
+| Redis\Graph\Node@node | Redis\Graph\Node@node |
++-----------------------+-----------------------+
 array(2) {
-  ["s.name"]=>
-  string(5) "src11"
-  ["d.name"]=>
-  string(6) "dest11"
+  ["s"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(5) "src11"
+    }
+  }
+  ["d"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(6) "dest11"
+    }
+  }
 }
-+--------+--------+
-| s.name | d.name |
-+--------+--------+
-| src2   | dest2  |
-+--------+--------+
++-----------------------+------------------------------+
+| s                     | d                            |
++-----------------------+------------------------------+
+| Redis\Graph\Node@node | Redis\Graph\Node@node_type_2 |
++-----------------------+------------------------------+
 array(2) {
-  ["s.name"]=>
-  string(4) "src2"
-  ["d.name"]=>
-  string(5) "dest2"
+  ["s"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(4) "node"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(4) "src2"
+    }
+  }
+  ["d"]=>
+  object(Redis\Graph\Node)#%d (3) {
+    ["label"]=>
+    string(11) "node_type_2"
+    ["alias"]=>
+    string(0) ""
+    ["properties"]=>
+    array(1) {
+      ["name"]=>
+      string(5) "dest2"
+    }
+  }
 }
