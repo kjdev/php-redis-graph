@@ -1,5 +1,5 @@
 {
-  "name": "kjdev/redis-graph",
+  "name": "blancoms/redis-graph",
   "type": "library",
   "description": "PHP RedisGraph client",
   "keywords": ["redis"],

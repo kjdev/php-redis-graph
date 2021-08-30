@@ -18,6 +18,7 @@ class Result
   const PROPERTY_INTEGER = 3;
   const PROPERTY_BOOLEAN = 4;
   const PROPERTY_DOUBLE = 5;
+  const PROPERTY_ARRAY = 6;
 
   public $values = [];
   public $stats = [];
@@ -233,11 +234,22 @@ class Result
       case self::PROPERTY_DOUBLE:
         $scalar = (float) $value;
         break;
+      case self::PROPERTY_ARRAY:
+        $scalar = $this->parseArray($value);
+        break;
       case self::PROPERTY_UNKNOWN:
         trigger_error('Unknown scalar type.', E_USER_WARNING);
     }
 
     return $scalar ?? null;
+  }
+
+  private function parseArray(array $value) {
+    $result = [];
+    foreach($value as $item) {
+      $result[] = $this->parseScalar($item);
+    }
+    return $result;
   }
 
   private function parseNode(array $var): Node
