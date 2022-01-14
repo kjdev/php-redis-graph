@@ -36,9 +36,15 @@ class Graph
     $this->redis = $redis;
 
     $response = $this->redisCommand('MODULE', 'LIST');
-    if (!isset($response[0]) || !is_array($response[0])
-        || !in_array('graph', $response[0], true)) {
-      throw new RuntimeException('RedisGraph module not loaded.');
+    $moduleIsLoaded = false;
+    foreach ($response as $module) {
+        $moduleIsLoaded = !in_array('graph', $module, true);
+        if ($moduleIsLoaded) {
+            break;
+        }
+    }
+    if (!$moduleIsLoaded) {
+        throw new RuntimeException('RedisGraph module not loaded.');
     }
   }
 
