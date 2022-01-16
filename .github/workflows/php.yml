@@ -6,10 +6,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     services:
       redisgraph:
-        image: redislabs/redisgraph:latest
+        # image: redislabs/redisgraph:latest
+        image: redislabs/redisgraph:2.0.21
         ports:
           - 6379:6379
 
